@@ -1,0 +1,46 @@
+.containerFlex
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.imageFlex {
+    flex-basis: 40%;
+}
+
+.textFlex {
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+.thinHorizontalRedLine {
+    border: 5px solid red;
+    border-radius: 5px;
+    height: 5px;
+    color: red;
+    background-color: red;
+}
+
+.thickHorizontalBlackLine {
+    border: 10px solid black;
+    border-radius: 5px;
+    height: 5px;
+    color: black;
+    background-color: black;
+}
+
+
+.thinHorizontalBlackLine {
+    border: 5px solid black;
+    border-radius: 5px;
+    height: 5px;
+    color: black;
+    background-color: black;
+}
+
+.buttonText {
+    text-align: center;
+}
+
+

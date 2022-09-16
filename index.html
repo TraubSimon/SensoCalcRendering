@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>SensoCalc Rendering</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="./myStyle.css">
+		
+		<!-- load libraries and containing scripts-->
+		<script type="module" src="./js/MTLLoader.js"></script>
+		<script type="module" src="./js/OBJLoader.js"></script>
+		<script type="module" src="./js/script.js"></script>
+		
+	</head>
+
+	<body> 
+
+		<!-- SensoPart Logo and Heading-->
+		<div class="containerFlex">
+			<div class="imageFlex">
+				<img src="./images/sensoPart.png" alt="Bild von Sensopart">
+			</div>
+			<div class="textFlex">
+				<h1>Rendering with Three.js and WebGL</h1>	
+				<p> Upload an .obj file and the related .mtl file to render this model</p>
+			</div>
+        </div>
+
+		<hr class="thinHorizontalRedLine">
+		<hr class="thickHorizontalBlackLine">
+		<hr class="thinHorizontalRedLine">
+
+		<!-- Rotation and scale parameters-->
+		<div class="containerFlex">
+			<div class="textFlex">
+				<h2>Parameters to move the object</h2>
+			</div>
+			
+			<div class="textFlex">
+				<label for="rotationX">Rotation around x-axis (in rand): </label>
+				<input type="text" placeholder="0.0" id="rotationX" name="rotationX"><br>
+				<label for="rotationY">Rotation around y-axis (in rand): </label>
+				<input type="text" placeholder="0.0" id="rotationY" name="rotationY"><br>
+				<label for="rotationZ">Rotation around z-axis (in rand): </label>
+				<input type="text" placeholder="0.0" id="rotationZ" name="rotationZ"><br>
+			</div>
+				
+			<div class="textFlex">
+				<label for="translationX">Translation into x-direction: </label>
+				<input type="text" placeholder="0.0" id="translationX" name="translationX"><br>
+				<label for="translationY">Translation into y-direction: </label>
+				<input type="text" placeholder="0.0" id="translationY" name="translationY"><br>
+				<label for="translationZ">Translation into z-direction: </label>
+				<input type="text" placeholder="0.0" id="translationZ" name="translationZ"><br>
+			</div>
+
+			<div class="textFlex">
+				<button type="button" onclick="update()">Render</button>
+			</div>
+		</div>
+		<hr class="thinHorizontalBlackLine">
+
+		<!-- CAD FIle Upload -->
+		<div class="containerFlex">
+			<div class="textFlex">
+				<h2>Upload the CAD file</h2>
+			</div>
+			
+			<!-- .obj upload-->
+			<div class="textFlex">
+				<p>Upload .obj-File</p>
+				
+				<form>
+					<input type="file" id="objFileDialogID" />
+				</form>
+	
+				<script>
+					const openFileDialogObj = () => {
+						document.getElementById("objFileDialogID").click();
+					};
+	
+					if (location.search == "?test") setTimeout(openFileDialogObj, 2000); 
+				</script>
+			</div>
+			
+			<!-- .mtl upload-->
+			<div class="textFlex">
+				<p>Upload .mtl-File</p>
+				
+				<form>
+					<input type="file" id="mtlFileDialogID" />
+				</form>
+	
+				<script>
+					const openFileDialogMTL = () => {
+						document.getElementById("mtlFileDialogID").click();
+					};
+	
+					if (location.search == "?test") setTimeout(openFileDialogMTL, 2000); 
+				</script>
+			</div>
+		</div>
+		<hr class="thinHorizontalBlackLine">
+		
+		
+		<!-- Sensor Selection-->
+		<div class="containerFlex">
+			<div class="textFlex">
+				<h2>Select the Sensor</h2>
+			</div>
+
+			<div class="textFlex">
+				<form>
+					<label for="sensors">Choose a Sensor: </label>
+					<select>
+						<option value="v50">VISOR &reg; V50"</option>
+						<option value="v20">VISOR &reg; V20</option>
+						<option value="v10">VISOR &reg; V10</option>
+						<option value="v10_1">VISOR &reg; V10 (1. Generation)</option>
+						<option value="v20_1">VISOR &reg; V20 (1. Generation)</option>
+					</select>
+				</form>
+			</div>
+		</div>
+		<hr class="thinHorizontalBlackLine">				
+	</body>
+</html>
